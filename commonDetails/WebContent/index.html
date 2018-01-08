@@ -1,0 +1,236 @@
+<!doctype html>
+<html ng-app="MyApp">
+<head>
+<meta charset="utf-8">
+
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<link rel="stylesheet" href="scripts/bootstrap.min.css">
+<script src="scripts/bootstrap.min.js"></script>
+<script src="scripts/angular.js"></script>
+<script src="controller.js"></script>
+</head>
+<body ng-controller="thisController">
+<div style="border:1px solid lightgrey;width:1340px;height:1080px;transform:translate(5px)">
+<form name="thisForm" novalidate>
+<div style="padding:30px;border:1px solid lightgrey;width:1336px;height:990px;">
+<h4 style="font-family:arial;font-size:28px;color:grey">Common Details</h4>
+<p style="font-weight:bold;font-family:arial;font-size:12px"> <acronym>*</acronym> All the fields are mandatory.<br>
+ <acronym>*</acronym> Enter First Name, Middle Name, Last Name  as per SSN</p><br>
+ 
+ 
+ <div class="row">
+ <div class="col-sm-3">
+ 
+ <p>Suffix <acronym>*</acronym></p><br>
+ <select style="width:70px;height:35px;transform:translate(-2px,-25px);float:left" required ng-model="suffix" name="suffixname" ng-change="suffixListcheck()">
+ <option value="-1"></option>
+ <option value="Mr.">Mr.</option>
+ <option value="Sr.">Sr.</option>
+ <option value="Jr.">Jr.</option>
+ <option value="&#8544;">&#8544;</option>
+ <option value="&#8545;">&#8545;</option>
+ <option value="&#8546;">&#8546;</option>
+ </select>
+ <p style="transform:translate(-70px,15px);font-size:13px;color:#EF1B1B">{{msgsuffixList}}</p>
+ </div>
+  
+ <div class="col-sm-3">
+ <p style="transform:translate(-230px)"> First Name<acronym>*</acronym> </p><br>
+ <input type="text" style="width:280px;height:35px;transform:translate(-235px,-25px);"  placeholder="first name" ng-model="firstNane" name="firstname" required ng-blur="firstname()" ng-keyup="firstNameMsgHide()"><br>
+ <p style="transform:translate(-240px,-25px);position:absolute;font-size:13px;color:#EF1B1B">{{msgfname}}</p>
+ 
+ </div>
+ 
+ <div class="col-sm-3">
+ <p style="transform:translate(-250px)">Middle Name<acronym>*</acronym></p> <br>
+ <input type="text" style="width:280px;height:35px;transform:translate(-250px,-25px);" required  placeholder="middle name" ng-model="middleName" name="middlename" ng-blur="middlename()" ng-keyup="middleNameMsgHide()"><br>
+ <p style="transform:translate(-250px,-25px);position:absolute;font-size:13px;color:#EF1B1B">{{msgmiddlename}}</p>
+ 
+ </div>
+  
+ <div class="col-sm-3">
+ <p style="transform:translate(-260px)"> Last Name<acronym>*</acronym> </p><br>
+ <input type="text" style="width:280px;height:35px;transform:translate(-260px,-25px);" required placeholder="last name" ng-model="lastName" name="lastname" ng-blur="lastname()" ng-keyup="lastNameMsgHide()"><br>
+ <p style="transform:translate(-260px,-25px);position:absolute;font-size:13px;color:#EF1B1B">{{msglastname}}</p>
+ </div></div>
+ 
+
+ <div class="row">
+  <div class="col-sm-3">
+ <p>SSN# <acronym>*</acronym></p> <br><input type="text" style="width:210px;height:35px;transform:translate(2px,-25px)" required ng-model="ssn" name="ssnname" pattern="^[0-9]{3}\-?[0-9]{2}\-?[0-9]{4}$" placeholder="SSN#" ng-blur="ssncheck()" ng-keyup="ssnMsgHide()"><br>
+ <p  style="transform:translate(2px,-25px);position:absolute;font-size:13px;color:#EF1B1B">{{msgssn}}</p>
+ <p style="transform:translate(2px,-25px);position:absolute;font-size:13px;color:#EF1B1B"  ng-if="thisForm.ssnname.$error.pattern">Format of the SSN# is incorrect.</p>
+
+ </div>
+  
+ <div class="col-sm-3">
+ <p style="transform:translate(-90px)">Marital Status <acronym>*</acronym></p> <br>
+ <select style="width:200px;height:35px;transform:translate(-90px,-25px)" required ng-model="maritalList" name="maritalListname" ng-change="maritalListcheck()">
+ <option value="-1"></option>
+ <option value="Single">Single</option>
+ <option value="Married">Married</option>
+  <option value="Widow">Widow</option>
+   <option value="Divorced">Divorced</option>
+    <option value="Legally Separated">Legally Separated</option>
+ </select>
+ <p  style="transform:translate(-90px,-25px);position:absolute;font-size:13px;color:#EF1B1B">{{msgmaritalList}}</p>
+ </div>
+  
+ <div class="col-sm-3">
+ <p style="transform:translate(-180px)">Gender <acronym>*</acronym></p> <br>
+ <p style="transform:translate(-180px,-20px)">MALE</p><input type="radio"  required name="gender"  ng-model="gendermale" value="MALE" style="transform:translate(-120px,-50px)">
+ <p style="transform:translate(-70px,-72px)">FEMALE</p><input type="radio" required name="gender"  ng-model="genderfemale" value="FEMALE" style="transform:translate(10px,-100px)">
+ 
+ </div>
+  
+ <div class="col-sm-3">
+ <p style="transform:translate(-250px,5px)">Date Of Birth <acronym>*</acronym></p> <br><input type="text" required style="transform:translate(-260px,-20px)" ng-model="birth" name="birthname" ng-blur="birthcheck()" ng-change="birthMsgHide()">
+ <p  style="transform:translate(-260px,-10px);position:absolute;font-size:13px;color:#EF1B1B">{{birthmsg}}</p>
+ </div>
+ </div>
+ 
+ <div class="row">
+  <div class="col-sm-6">
+  <p style="transform:translate(7px,-60px)">Phone <acronym>*</acronym></p><br>
+  <input type="text" style="width:250px;height:35px;transform:translate(8px,-80px);" ng-model="contact" name="phonenumber" pattern="[0-9]{13}" required placeholder="1234-5678-90123" ng-blur="phonecheck()" ng-keyup="phoneMsgHide()">
+  <br>
+  <p style="transform:translate(10px,-80px);position:absolute;font-size:13px;color:#EF1B1B" >{{msgcontact}}</p>
+   <p ng-if ="thisForm.phonenumber.$error.pattern" style="transform:translate(10px,-80px);position:absolute;font-size:13px;color:#EF1B1B" class="text-danger">incorrect Format.Please enter valid Phone.</p>
+  </div>
+ 
+  <div class="col-sm-6">
+  <p style="transform:translate(-340px,-60px)">Email <acronym>*</acronym></p>
+  <input type="email" required style="width:280px;height:35px;transform:translate(-340px,-60px)" placeholder="email required" ng-model="emailid" name="emailid" ng-blur="emailcheck()" ng-keyup="emailMsgHide()">
+  <p  style="transform:translate(-340px,-60px);position:absolute;font-size:13px;color:#EF1B1B" class="text-danger">{{msgemail}}</p>
+  <p ng-if="thisForm.emailid.$error.email" style="transform:translate(-340px,-60px);position:absolute;font-size:13px;color:#EF1B1B" class="text-danger">Format of the E-mail ID is incorrect. Please enter the valid E-mail ID</p>
+  </div>
+ </div>
+   <br>
+   
+   <h5 style="font-family:arial;font-size:16px;font-weight:bold;transform:translate(11px,-70px)">Driniving License</h5><br><br>
+   <div class="row">
+   <div class="col-sm-4">
+    <p style="transform:translate(10px,-95px)">License# <acronym>*</acronym></p>
+  <input type="text" required style="width:280px;height:35px;transform:translate(8px,-95px);" pattern="^[0-3][0-9]{7}$" placeholder="license" ng-model="license" name="licensename" ng-blur="licencecheck()" ng-keyup="licenceMsgHide()">
+   <p style="transform:translate(8px,-95px);position:absolute;font-size:13px;color:#EF1B1B">{{msglicence}}</p>
+   <p style="transform:translate(8px,-95px);position:absolute;font-size:13px;color:#EF1B1B" ng-if="thisForm.licensename.$error.pattern">Format of the Driving License# is incorrect.</p>
+   </div>
+   
+      <div class="col-sm-4">
+    <p style="transform:translate(-100px,-100px)">Issued State <acronym>*</acronym></p>
+  <input type="text" required style="width:280px;height:35px;transform:translate(-100px,-98px)" required ng-model="issuedstate" name="issuedstatename" placeholder="issued state" ng-blur="issuedstatecheck()" ng-keyup="issuedstateMsgHide()">
+   <p  style="transform:translate(-100px,-100px);position:absolute;font-size:13px;color:#EF1B1B">{{msgissuedstate}}</p>
+   </div>
+ 
+    <div class="col-sm-4">
+    <p style="transform:translate(-200px,-98px)">Expiration Date <acronym>*</acronym></p>
+  <input type="text" required style="width:280px;height:35px;transform:translate(-200px,-100px)" required ng-model="selectdate" name="selectdatename" ng-blur="selectdatecheck()" ng-change="selectdateMsgHide()">
+   <p style="transform:translate(-200px,-100px);position:absolute;font-size:13px;color:#EF1B1B">{{selectdatemsg}}</p>
+   </div></div><br><br>
+   
+    <h5 style="font-family:arial;font-size:16px;font-weight:bold;transform:translate(15px,-100px)">Address <acronym>*</acronym></h5>
+    <br>
+    <div class="row">
+    <div class="col-sm-6">
+    <textarea style="width:500px;height:50px;transform:translate(10px,-130px)" required ng-model="address" placeholder="address required" name="addressname" ng-blur="addresscheck()" ng-keyup="addressMsgHide()"></textarea>
+   <p  style="transform:translate(10px,-130px);position:absolute;font-size:13px;color:#EF1B1B">{{msgaddress}}</p>
+   </div>
+   <div class="col-sm-2">
+   <p style="transform:translate(-110px,-143px)">City <acronym>*</acronym></p><br>
+    <input type="text" style="width:150px;height:35px;transform:translate(-110px,-170px)" required ng-model="city" placeholder="city" name="cityname" ng-blur="citycheck()" ng-keyup="cityMsgHide()">
+   <p style="transform:translate(-110px,-170px);position:absolute;font-size:13px;color:#EF1B1B">{{msgcity}}</p>
+   </div>
+    <div class="col-sm-2">
+   <p style="transform:translate(-135px,-143px)">State <acronym>*</acronym></p><br>
+   <!--   <input type="text" style="width:150px;height:35px;transform:translate(-135px,-170px)" required ng-model="state"  placeholder="state" name="statename" ng-blur="statecheck()" ng-keyup="stateMsgHide()">-->
+   <select style="width:150px;height:35PX;transform:translate(-135px,-170px)"  required ng-model="state" name="statename"  ng-change="stateListCheck()">
+   <option value="-1"></option>
+   <option value="AL  Alabama"> AL  Alabama</option>
+   <option value="AK  Alaska"> AK   Alaska</option>
+   <option value="AZ  Arizona">AZ   Arizona</option>
+   <option value="AR  Arkansas"> AR   Arkansas</option>
+   <option value="CA  California"> CA   California</option>
+   <option value="CO  Colorado"> CO   Colorado</option>
+   <option value="CT  Connecticut"> CT   Connecticut</option>
+   <option value="DE  Delaware"> DE   Delaware</option>
+   <option value="FL  Florida"> FL   Florida</option>
+   <option value="GA  Georgia"> GA   Georgia</option>
+   <option value="HI  Hawaii"> HI   Hawaii</option>
+   <option value="ID  Idaho"> ID   Idaho</option>
+   <option value="IL  Illinois"> IL   Illinois</option>
+   <option value="IN  Indiana"> IN   Indiana</option>
+   <option value="IA  Iowa"> IA   Iowa</option>
+   <option value="KS  Kansas"> KS   Kansas</option>
+   <option value="KY  Kentucky"> KY   Kentucky</option>
+   <option value="LA  Louisiana"> LA   Louisiana</option>
+   <option value="ME  Maine"> ME   Maine</option>
+   <option value="MD  Maryland"> MD   Maryland</option>
+   <option value="MA  Massachusetts"> MA   Massachusetts</option>
+   <option value="MI  Michigan"> MI   Michigan</option>
+   <option value="MN  Minnesota"> MN   Minnesota</option>
+   <option value="MS  Mississippi"> MS   Mississippi</option>
+   <option value="MO  Missouri"> MO   Missouri</option>
+    <option value="MO  Montana"> MO   Montana</option>
+     <option value="MT  Missouri">MT   Missouri</option>
+      <option value="NE  Nebraska"> NE   Nebraska</option>
+       <option value="NV  	Nevada"> NV   Nevada</option>
+        <option value="NH  New Hampshire"> NH   New Hampshire</option>
+         <option value="NJ  New Jersey"> NJ   New Jersey</option>
+          <option value="NM  New Mexico"> NM   New Mexico</option>
+          <option value="NY  New York"> NY  New York</option>
+          <option value="NC  North Carolina">NC  North Carolina</option>
+          <option value="ND  North Dakota"> ND  North Dakota</option>
+          <option value="OH  Ohio"> OH  Ohio</option>
+          <option value="OK  Oklahoma"> OK  Oklahoma</option>
+          <option value="OR  Oregon"> OR  Oregon</option>
+          <option value="PA  Pennsylvania"> PA  Pennsylvania</option>
+          <option value="RI  Rhode Island"> RI  Rhode Island</option>
+          <option value="SC  South Carolina"> SC  South Carolina</option>
+           <option value="SD South Dakota"> SD South Dakota</option>
+            <option value="TN  Tennessee"> TN  Tennessee</option>
+             <option value="TX  Texas"> TX  Texas</option>
+              <option value="UT  Utah"> UT  Utah</option>
+               <option value="VT  Vermont"> VT  Vermont</option>
+                <option value="VA  Virginia"> VA  Virginia</option>
+                 <option value="WA  Washington">WA  Washington</option>
+                  <option value="WV  West Virginia"> WV  West Virginia</option>
+                   <option value="WI  Wisconsin"> WI  Wisconsin</option>
+                    <option value="WY  Wyoming"> WY  Wyoming</option>
+         
+   </select>
+   <p style="transform:translate(-135px,-170px);position:absolute;font-size:13px;color:#EF1B1B">{{msgstate}}</p>
+   </div>
+    <div class="col-sm-2">
+   <p style="transform:translate(-160px,-145px)">Zip <acronym>*</acronym></p><br>
+    <input type="text" style="width:150px;height:35px;transform:translate(-160px,-170px)" pattern="[0-9]{5}"   required ng-model="zip" placeholder="zip" name="zipname" ng-blur="zipcheck()" ng-keyup="zipMsgHide()">
+    <p  style="transform:translate(-160px,-170px);position:absolute;font-size:13px;color:#EF1B1B">{{msgzip}}</p>
+    <p style="transform:translate(-160px,-170px);position:absolute;font-size:13px;color:#EF1B1B"  ng-if="thisForm.zipname.$error.pattern">Format of the ZIP Code is incorrect. Please enter the valid ZIP Code</p>
+   </div>
+   </div>
+   <br>
+   </div>
+   </form>
+   <div style="width:1334px;height:80px;border:1px solid lightgrey;transform:translate(2px,1px)">
+   <button class="btn btn-md btn-info active" style="width:100px;border-radius:5px;transform:translate(900px,20px)" ng-disabled="thisForm.$invalid" >SUBMIT</button>
+   
+    <button class="btn btn-md btn-muted active" style="width:100px;border-radius:5px;transform:translate(920px,20px)">CANCEL</button>
+   
+   
+   </div>
+ <!--  </div>-->
+ 
+ 
+
+
+
+
+
+
+
+</div>
+</body>
+
+
+
+</html>

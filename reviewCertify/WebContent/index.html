@@ -1,0 +1,280 @@
+
+
+<!doctype html>
+<html ng-app="MyApp">
+<head>
+<script src="scripts/angular.js"></script>
+
+<meta name="viewport" content="width=device-width,initial-scale=1">
+
+<script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.2.1.min.js"></script>
+<script src="scripts/bootstrap.min.js"></script>
+<link rel="stylesheet" href="scripts/bootstrap.min.css">
+
+
+<script src="reviewController.js"></script>
+<script src="scripts/mui.min.js"></script>
+<link rel="stylesheet" href="scripts/mui.min.css">
+<link rel="stylesheet" href="reviewstyle.css">
+
+
+
+</head>
+<body ng-controller="thisController">
+<div style="border:1px solid lightgrey;width:1350px;height:1403px">
+<div class="col-sm-4"><div style="width:310px;height:1200px;">
+<div style="transform:translate(30px,20px)">
+  <img src="image/images.jpg" class="img-circle"  width="70" height="70">
+<div style="float:right;text-align:center;border-radius:5px;width:80px;height:20px;background-color:#00BFFF;color:white;transform:translate(-110px,50px)">NEW HIRE
+</div>
+</div>
+ 
+ <div style="float:right">
+ <h3 style="font-family:arial;transform:translate(-40px,-60px);font-size:21px">Alexander Kote </h3>
+</div>
+<h3 style="font-size:16px;font-family:arial;font-weight:bold;transform:translate(25px,30px);attachment:fixed;">Perosonal Info</h3>
+ <span class="caret" data-toggle="collapse" data-target="#demo" style="transform:translate(270px,-10px);attachment:fixed;"></span>
+
+<div id="demo" class="collapse in" style="width:250px;height:400px;transform:translate(25px,-30px);attachment:fixed;"><br><br>
+    
+    <p style="color:grey">Email</p>
+    <div class="mui-textfield">
+    <input type="email" ng-model="txtemail" style="height:18px" readonly>
+  </div>
+   
+    <p style="color:grey">Phone<acronym>*</acronym></p>
+       <div class="mui-textfield">
+    <input type="text" placeholder="Input 2" ng-model="txtphone" style="height:18px" readonly>
+  </div>
+    
+    
+    <p style="color:grey">Job Id</p>
+         <div class="mui-textfield">
+    <input type="text" placeholder="Input 3" ng-model="txtjobid" style="height:18px" readonly>
+  </div>
+    
+    
+    <p style="color:grey">Job Title</p>
+        <div class="mui-textfield">
+    <input type="text" placeholder="Input 4" ng-model="txtjobtitle" style="height:18px" readonly>
+  </div>
+    
+    <p style="color:grey">Hire Category</p>
+         <div class="mui-textfield">
+    <input type="text" placeholder="Input 5" ng-model="txthire" style="height:18px" readonly>
+  </div>
+    
+    <p style="color:grey">Work Location</p>
+       <div class="mui-textfield">
+    <input type="text" placeholder="Input 6" ng-model="txtwork" style="height:18px" readonly>
+  </div>
+    
+   
+  </div>
+ 
+
+ <h3 style="font-size:16px;font-family:arial;font-weight:bold;transform:translate(25px,80px);attachment:fixed;">Compensation Details</h3>
+  <span class="caret" data-toggle="collapse" data-target="#comp" style="transform:translate(270px,40px);attachment:fixed;"></span>
+
+<div id="comp" class="collapse in" style="width:250px;height:400px;transform:translate(25px,40px);attachment:fixed;"><br>
+
+ <p style="color:grey">Pay Rate</p>
+      <div class="mui-textfield">
+    <input type="text" placeholder="Input 1" ng-model="txtpayrate" style="height:18px" readonly>
+  </div>
+  
+  
+  <p style="color:grey">Bill Rate</p>
+   <div class="mui-textfield">
+    <input type="text" placeholder="Input 2" ng-model="txtbillrate" style="height:18px" readonly>
+  </div>
+  
+  <p style="color:grey">OT Rate</p>
+       <div class="mui-textfield">
+    <input type="text" placeholder="Input 3" ng-model="txtotrate" style="height:18px" readonly>
+  </div>
+   
+   <p style="color:grey">OT Bill Rate</p>
+        <div class="mui-textfield">
+    <input type="text" placeholder="Input 4" ng-model="txtotbillrate" style="height:18px" readonly>
+  </div>
+   
+  
+  </div>
+
+  
+ 
+ 
+ 
+ 
+ 
+</div>
+</div>
+
+
+
+
+
+
+
+<!--  second part-->
+
+<div class="col-sm-8"style="width:500px;height:1200px;transform:translate(-130px,5px);">
+
+<div style="width:900px;height:50px;border-bottom:1px solid lightgrey;transform:translate(45px,-5px)">
+<nav>
+<ul class="nav nav-justified" style="background-color:white;transform:translate(5px,7px)">
+
+<li><a href="#" style="color:black;font-size:15px;font-family:arial">Emails</a></li>
+<li class="active"style="border-bottom:1px solid #00ace6"><a href="#" style="color:#00ace6;font-size:15px;font-family:arial">Review & Certify</a></li>
+<li><a href="#" style="color:black;font-size:15px;font-family:arial">Schedule</a></li>
+<li><a href="#" style="color:black;font-size:15px;font-family:arial">Activities</a></li>
+</ul>
+</nav>
+</div>
+<br><br><br>
+
+<p style="font-family:arial;transform:translate(45px,-40px)">Your Onboarding Progress</p>
+
+<div class="progress" style="transform:translate(45px,-30px);width:850px">
+    <div class="progress-bar progress-bar-striped active" role="progressbar" aria-valuenow="40" aria-valuemin="0" aria-valuemax="100" style="width:40%">
+      40%
+    </div>
+    
+    
+    
+  </div>
+ 
+
+<hr style="width:900px;transform:translate(60px,-30px)">
+   
+ 
+ 
+ 
+     <div class="row" style="transform:translate(40px,-30px);width:500px">
+  
+  <button class="btn btn-default" style="width:35px;height:35px;border:1px solid #00BFFF;background-color:white;color:#00BFFF;border-radius:60%;transform:translate(15px,2px);font-weight:bold">1</button>
+    <div style="font-size:16px;font-family:tahoma;padding:10px;float:right;width:900px;height:270px;transform:translate(450px,-35px);">Drug Test
+    
+            <select
+    onchange="this.className=this.options[this.selectedIndex].className" 
+    class="important" style="float:right;width:130px;height:25px;border-radius:8px"> 
+    <option class="important" selected="selected">Pending</option> 
+    <option class="second-important">Completed</option> 
+    <option class="third-important">Rejected</option>
+</select> 
+     
+     <div style="width:200px;height:200px;border:1px solid lightgrey;transform:translate(2px,20px)">
+     <span class="caret"  data-toggle="collapse" data-target="#docone" style="transform:translate(180px,2px)"></span>
+     <div id="docone" class="collapse" style="width:100px;height:40px;border:1px solid lightgrey;transform:translate(100px,4px)">
+     <ul transform:translate(-20px,3px)">
+  <li><a href="#">View</a></li>
+  <li><a href="#">Approve</a></li>
+  <li><a href="#">Reject</a></li>
+  <li><a href="#">Replace</a></li>
+</ul> 
+    
+     </div>
+     </div>
+     
+     <div style="width:200px;height:200px;border:1px solid lightgrey;transform:translate(250px,-180px)">abcd</div>
+       
+    </div>
+  </div>
+  <hr style="width:900px;transform:translate(60px,-60px)">
+ 
+       <div class="row" style="transform:translate(30px,-70px);width:500px">
+  
+  <button class="btn btn-default" style="width:35px;height:35px;border:1px solid #00BFFF;background-color:white;color:#00BFFF;border-radius:60%;transform:translate(25px,2px);font-weight:bold">2</button>
+    <div style="font-size:16px;font-family:tahoma;padding:10px;float:right;width:900px;height:270px;transform:translate(460px,-35px);">I9 Verification
+    
+    <select
+    onchange="this.className=this.options[this.selectedIndex].className" 
+    class="important" style="float:right;width:130px;height:25px;border-radius:8px"> 
+    <option class="important" selected="selected">Pending</option> 
+    <option class="second-important">Completed</option> 
+    <option class="third-important">Rejected</option>
+</select> 
+    </div>
+  </div>
+  <hr style="width:900px;transform:translate(60px,-90px)">
+  
+      <div class="row" style="transform:translate(-20px,-90px);">
+  
+  <button class="btn btn-default" style="width:35px;height:35px;border:1px solid #00BFFF;background-color:white;color:#00BFFF;border-radius:60%;transform:translate(70px,2px);font-weight:bold">3</button>
+    <div style="font-size:16px;font-family:tahoma;padding:10px;float:right;width:900px;height:270px;transform:translate(510px,-35px);">Background Verification
+    
+        <select
+    onchange="this.className=this.options[this.selectedIndex].className" 
+    class="important" style="float:right;width:130px;height:25px;border-radius:8px"> 
+    <option class="important" selected="selected">Pending</option> 
+    <option class="second-important">Completed</option> 
+    <option class="third-important">Rejected</option>
+</select> 
+    </div>
+   
+    
+   
+  </div>
+ </div>
+   
+
+
+
+  
+   <div class="col-sm-12 jumbotron" style="height:120px;width:1346px;border:1px solid lightgrey;attachment:fixed;transform:translate(2px,80px)" ><br>
+<div><button  class="btn btn-info btn-md active" style="width:140px;align:center;border:1px solid grey;border-radius:7px;transform:translate(1000px,-20px)">SAVE</button>&nbsp&nbsp
+<button  class="btn btn-default btn-md active" style="width:140px;align:center;border-radius:7px;transform:translate(1000px,-20px)">CANCEL</button>
+</div>
+
+ </div>
+
+  
+
+</div>
+
+
+</body>
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 
+
+</html>
+
+
+
+
+
+
+
+
+
+
+</body>
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 
+
+</html>

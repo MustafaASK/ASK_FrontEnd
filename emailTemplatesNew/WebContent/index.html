@@ -1,0 +1,154 @@
+<!doctype html>
+<html ng-app="MyApp">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<link rel="stylesheet" href="scripts/mui.min.css" type="text/css">
+<script src="scripts/mui.min.js"></script>
+<link rel="stylesheet" href="scripts/bootstrap.min.css">
+<script src="scripts/bootstrap.min.js"></script>
+<script src="scripts/angular.js"></script>
+<script src="appscript.js" type="text/javascript"></script>
+<script>
+var app=angular.module("MyApp",[]);
+app.controller("thisController",function($scope){
+	$scope.FirstName="[First_Name]";
+	$scope.LastName="[Last_Name]";
+	$scope.JobTitle="[Job_Title]";
+	$scope.SkillMetric="[Skill_Metric]";
+});
+
+</script>
+
+</head>
+<body ng-controller="thisController">
+<div style="width:1355px;height:903px;position:absolute;border:1px solid lightgrey">
+<div class="col-sm-10"style="width:998px;height:790px;">
+<h1 style="font-size:18px;font-family:arial;color:black;transform:translate(20px,2px)">New Email Template</h1>
+
+<div style="width:500px;height:100px">
+<p style="font-size:15px;color:grey;font-family:arial;transform:translate(20px,18px)"> Template Name<acronym>*</acronym></p>
+  <div class="mui-textfield mui-textfield--float-label">
+    <input type="text" style="width:500px;transform:translate(20px,11px)">
+    
+  </div>
+
+
+</div>
+
+<div style="width:300px;height:100px;transform:translate(600px,-100px)">
+<p style="transform:translate(20px,18px);font-size:15px;color:grey;font-family:arial">Category<acronym>*</acronym></p>
+  <select style="width:250px;height:30px;transform:translate(20px,18px);font-size:15px" class="form-control">
+  <option value="offer letter">offer letter</option>
+  
+  
+  </select>
+
+
+</div>
+
+<p style="font-size:15px;color:grey;font-family:arial;transform:translate(20px,-80px)"> Description<acronym>*</acronym></p>
+  <div class="mui-textfield mui-textfield--float-label">
+    <input type="text" style="width:880px;transform:translate(20px,-90px)">
+    
+  </div>
+
+
+ <p style="font-size:15px;color:grey;font-family:arial;transform:translate(20px,-70px)" id="subject"  ondrop="drop(event)" ondragover="allowDrop(event)"> Subject<acronym>*</acronym></p>
+  <div class="mui-textfield mui-textfield--float-label" >
+    <input type="text" style="width:900px;transform:translate(20px,-80px)" >
+     
+  </div>
+
+ <div onload="initDoc();" style="transform:translate(1px,-60px)">
+<form name="compForm">
+<input type="hidden" name="myDoc">
+<div id="toolBar1"></div>
+  <div id="toolBar2" style="width:900px;height:40px;border:1px solid lightgrey;transform:translate(20px)">
+
+<img class="intLink" style="transform:translate(10px,10px)" title="Bold" onclick="formatDoc('bold');" src="data:image/gif;base64,R0lGODlhFgAWAID/AMDAwAAAACH5BAEAAAAALAAAAAAWABYAQAInhI+pa+H9mJy0LhdgtrxzDG5WGFVk6aXqyk6Y9kXvKKNuLbb6zgMFADs=" />&nbsp&nbsp&nbsp&nbsp
+<img class="intLink" style="transform:translate(20px,10px)" title="Italic" onclick="formatDoc('italic');" src="data:image/gif;base64,R0lGODlhFgAWAKEDAAAAAF9vj5WIbf///yH5BAEAAAMALAAAAAAWABYAAAIjnI+py+0Po5x0gXvruEKHrF2BB1YiCWgbMFIYpsbyTNd2UwAAOw==" />&nbsp&nbsp&nbsp&nbsp
+<img class="intLink" style="transform:translate(30px,10px)" title="Underline" onclick="formatDoc('underline');" src="data:image/gif;base64,R0lGODlhFgAWAKECAAAAAF9vj////////yH5BAEAAAIALAAAAAAWABYAAAIrlI+py+0Po5zUgAsEzvEeL4Ea15EiJJ5PSqJmuwKBEKgxVuXWtun+DwxCCgA7" />&nbsp&nbsp&nbsp&nbsp
+<img class="intLink" style="transform:translate(40px,10px)"title="Left align" onclick="formatDoc('justifyleft');" src="data:image/gif;base64,R0lGODlhFgAWAID/AMDAwAAAACH5BAEAAAAALAAAAAAWABYAQAIghI+py+0Po5y02ouz3jL4D4JMGELkGYxo+qzl4nKyXAAAOw==" />&nbsp&nbsp&nbsp&nbsp
+<img class="intLink" style="transform:translate(50px,10px)" title="Center align" onclick="formatDoc('justifycenter');" src="data:image/gif;base64,R0lGODlhFgAWAID/AMDAwAAAACH5BAEAAAAALAAAAAAWABYAQAIfhI+py+0Po5y02ouz3jL4D4JOGI7kaZ5Bqn4sycVbAQA7" />&nbsp&nbsp&nbsp&nbsp
+<img class="intLink" style="transform:translate(60px,10px)" title="Right align" onclick="formatDoc('justifyright');" src="data:image/gif;base64,R0lGODlhFgAWAID/AMDAwAAAACH5BAEAAAAALAAAAAAWABYAQAIghI+py+0Po5y02ouz3jL4D4JQGDLkGYxouqzl43JyVgAAOw==" />&nbsp&nbsp&nbsp&nbsp
+
+<img class="intLink" style="transform:translate(70px,10px)" title="Copy" onclick="formatDoc('copy');" src="data:image/gif;base64,R0lGODlhFgAWAIQcAB1ChBFNsTRLYyJYwjljwl9vj1iE31iGzF6MnHWX9HOdz5GjuYCl2YKl8ZOt4qezxqK63aK/9KPD+7DI3b/I17LM/MrL1MLY9NHa7OPs++bx/Pv8/f///////////////yH5BAEAAB8ALAAAAAAWABYAAAWG4CeOZGmeaKqubOum1SQ/kPVOW749BeVSus2CgrCxHptLBbOQxCSNCCaF1GUqwQbBd0JGJAyGJJiobE+LnCaDcXAaEoxhQACgNw0FQx9kP+wmaRgYFBQNeAoGihCAJQsCkJAKOhgXEw8BLQYciooHf5o7EA+kC40qBKkAAAGrpy+wsbKzIiEAOw==" />&nbsp&nbsp&nbsp&nbsp
+<img class="intLink" style="transform:translate(80px,10px)" title="Paste" onclick="formatDoc('paste');" src="data:image/gif;base64,R0lGODlhFgAWAIQUAD04KTRLY2tXQF9vj414WZWIbXmOrpqbmpGjudClFaezxsa0cb/I1+3YitHa7PrkIPHvbuPs+/fvrvv8/f///////////////////////////////////////////////yH5BAEAAB8ALAAAAAAWABYAAAWN4CeOZGmeaKqubGsusPvBSyFJjVDs6nJLB0khR4AkBCmfsCGBQAoCwjF5gwquVykSFbwZE+AwIBV0GhFog2EwIDchjwRiQo9E2Fx4XD5R+B0DDAEnBXBhBhN2DgwDAQFjJYVhCQYRfgoIDGiQJAWTCQMRiwwMfgicnVcAAAMOaK+bLAOrtLUyt7i5uiUhADs=" />
+<!--  <img class="intLink" style="transform:translate(90px,10px)" title="link"  onclcik="formatDoc('link');">-->
+
+</div>
+<div id="textBox"  contenteditable="true" style="width:900px;height:300px;border:1px solid lightgrey;overflow:scroll;padding:30px;transform:translate(20px)">
+
+<div  id="div1"  ondrop="drop(event)" ondragover="allowDrop(event)" style="width:900px;height:300px">
+
+
+
+<p>Hi, &nbsp&nbsp[First_Name]<br><br>
+Welcome to [Company].<br>
+
+
+
+You can sign in to your account using the following link: <br><br>
+We're here to help you make the most of ACCUICK.Our team will be reaching out to you,but if you have any questions in the meantime<br>
+please email us at team@accuick.com.</p>
+
+</div>
+
+
+</div>
+<!-- <p id="editMode">--><input type="checkbox" ng-hide="true" name="switchMode" id="switchBox" onchange="setDocMode(this.checked);" /><!--   <label for="switchBox">Show HTML</label></p>-->
+
+</form>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+</div>
+<!--  <p>second view</p>-->
+<div  class="col-sm-2 jumbotron"style="width:350px;height:790px;">
+<h1 style="font-size:18px;font-family:arial;color:black;transform:translate(14px,-40px)">Place Holders</h1><br><br>
+<div style="transform:translate(10px,-50px)">
+ <div style="width:250px;height:30px;border:1px solid lightgrey;background-color:white;border-radius:4px"><p draggable="true" ondragstart="drag(event)" id="{{FirstName}}" style="cursor:pointer;font-size:15px;transform:translate(12px)">{{FirstName}}</p></div><br>
+ <div style="width:250px;height:30px;border:1px solid lightgrey;background-color:white;border-radius:4px"> <p draggable="true" ondragstart="drag(event)" id="{{LastName}}" style="cursor:pointer;font-size:15px;transform:translate(12px)">{{LastName}}</p></div><br>
+<div style="width:250px;height:30px;border:1px solid lightgrey;background-color:white;border-radius:4px"><p draggable="true" ondragstart="drag(event)" id="{{JobTitle}}" style="cursor:pointer;font-size:15px;transform:translate(12px)">{{JobTitle}}</p></div><br>
+<div style="width:250px;height:30px;border:1px solid lightgrey;background-color:white;border-radius:4px"><p draggable="true" ondragstart="drag(event)" id="{{SkillMetric}}"  style="cursor:pointer;font-size:15px;transform:translate(12px)">{{SkillMetric}}</p></div><br>
+</div>
+
+
+
+ 
+ 
+
+
+</div>
+
+
+
+
+<div style="width:1340px;height:110px;transform:translate(9px,790px);border:1px solid lightgrey" class="jumbotron">
+<button class="btn btn-lg btn-danger active" style="width:110px;height:40px;text-align:center;transform:translate(1010px,-800px)">Save</button>
+<button class="btn btn-lg btn-default active" style="width:110px;height:40px;text-align:center;transform:translate(1020px,-800px)">Cancel</button>
+
+</div>
+
+
+
+
+</div>
+
+
+
+</body>
+
+
+</html>

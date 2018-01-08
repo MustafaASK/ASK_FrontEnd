@@ -1,0 +1,86 @@
+
+
+
+.intLink { cursor: pointer; }
+img.intLink { border: 0; }
+#toolBar1 select { font-size:10px; }
+#textBox {
+  width: 540px;
+  height: 200px;
+  border: 1px #000000 solid;
+  padding: 12px;
+  overflow: scroll;
+}
+#textBox #sourceText {
+  padding: 0;
+  margin: 0;
+  min-width: 498px;
+  min-height: 200px;
+}
+#editMode label { cursor: pointer; }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.intLink { cursor: pointer; }
+img.intLink { border: 0; }
+#toolBar1new select { font-size:10px; }
+#textBoxnew {
+  width: 540px;
+  height: 200px;
+  border: 1px #000000 solid;
+  padding: 12px;
+  overflow: scroll;
+}
+#textBoxnew #sourceTextnew {
+  padding: 0;
+  margin: 0;
+  min-width: 498px;
+  min-height: 200px;
+}
+#editModenew label { cursor: pointer; }
+
+
+
+
+
+
+
+
+
+
+
+
+.caret{
+	
+	border-top:8px solid grey;
+	border-right: 8px solid transparent;
+	border-left: 8px solid transparent;
+	
+	
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

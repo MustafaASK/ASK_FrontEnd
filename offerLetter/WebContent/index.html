@@ -1,0 +1,712 @@
+<!doctype html>
+<html ng-app="MyApp">
+<head>
+<script src="scripts/angular.js"></script>
+<script src="scripts/angular-route.js"></script>
+<meta name="viewport" content="width=device-width,initial-scale=1">
+
+<script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.2.1.min.js"></script>
+<script src="scripts/bootstrap.min.js"></script>
+<link rel="stylesheet" href="scripts/bootstrap.min.css">
+<link rel="stylesheet" href="offerstyle.css">
+<script src="offerscript.js"></script>
+<script src="offercontroller.js"></script>
+<script src="scripts/mui.min.js"></script>
+<link rel="stylesheet" href="scripts/mui.min.css">
+
+
+</head>
+<body ng-controller="thisController">
+
+<div class="col-sm-4" ng-show="one"><div style="width:310px;height:1520px;border:1px solid lightgrey;">
+<div style="transform:translate(30px,20px)">
+
+   <div style="transform:translate(230px,-20px)">
+  
+   <button style="width:30px;height:30px;background-color:#ffffe6"" class="btn btn-sm" ng-click="hideMe()"><span style="transform: rotate(90deg);" class="caret"></span></button></div>
+  <!--  <button id="triangle-left" style="width:50px;height:50px"></button>-->
+  <img src="image/images.jpg" class="img-circle"  width="70" height="70">
+ 
+  
+  <a href="#" onclick="myFunction()"><span class="glyphicon glyphicon-pencil"  title="click here to edit" style="float:right;transform:translate(-40px,10px)"></span></a>
+  <!-- <span> <input type="checkbox" title="click here to edit" name="edit" ng-model="edit" style="transform:translate(170px,2px)"> </span>-->
+   
+<div style="float:right;text-align:center;border-radius:5px;width:80px;height:20px;background-color:#00BFFF;color:white;transform:translate(-110px,50px)">NEW HIRE</div>
+<!--  <input type="file" name="dataFile" id="fileChooser" onchange="return ValidateFileUpload()" required/>-->
+
+</div>
+ 
+ <div style="float:right">
+ <h3 style="font-family:arial;transform:translate(-40px,-60px);font-size:21px">Alexander Kote </h3>
+</div>
+<h3 style="font-size:16px;font-family:arial;font-weight:bold;transform:translate(25px,30px);attachment:fixed;">Perosonal Info</h3>
+ <a href="#demo" class="caret" data-toggle="collapse" style="transform:translate(270px,-10px);attachment:fixed;"></a>
+
+<div id="demo" class="collapse in" style="width:250px;height:400px;transform:translate(25px,-30px);attachment:fixed;"><br><br>
+    <div>
+    <label style="color:grey">Email</label>
+    <input type="email" ng-model="txtemail" id="em"  placeholder="email" style="width:250px;height:35px" class="form-control" disabled="true">
+    </div>
+   <div>
+    <label style="color:grey">Phone<acronym>*</acronym></label>
+    <input type="text" ng-model="txtphone" id="ph" placeholder="contact" style="width:250px;height:35px" class="form-control" disabled="true">
+    </div>
+    <div>
+    <label style="color:grey">Job Id</label>
+    <input type="text" ng-model="jobId" id="ji" placeholder="Job Id" style="width:250px;height:35px" class="form-control" disabled="true">
+    </div>
+    <div>
+    <label style="color:grey">Job Title</label>
+    <input type="text" ng-model="jobTitle" id="jt" placeholder="Job Title" style="width:250px;height:35px" class="form-control" disabled="true">
+    </div>
+    <div>
+    <label style="color:grey">Hire Category</label>
+    <input type="text" ng-model="hireCategory" id="hc" placeholder="Hire Category" style="width:250px;height:35px" class="form-control" disabled="true">
+    </div>
+    <div>
+    <label style="color:grey">Work Location</label>
+    <input type="text" ng-model="workLocation" id="wl" placeholder="Work Location" style="width:250px;height:35px" class="form-control" disabled="true">
+    </div>
+ 
+   
+  </div>
+ 
+
+ <h3 style="font-size:16px;font-family:arial;font-weight:bold;transform:translate(25px,80px);attachment:fixed;">Compensation Details</h3>
+  <a href="#comp" class="caret" data-toggle="collapse"style="transform:translate(270px,40px);attachment:fixed;"></a>
+
+<div id="comp" class="collapse in" style="width:250px;height:400px;transform:translate(25px,40px);attachment:fixed;"><br>
+<div>
+ <label style="color:grey">Pay Rate</label>
+  <input type="text" ng-model="payRate" id="pr" placeholder="Pay Rate" style="width:250px;height:35px" class="form-control" disabled="true">
+  </div>
+  <div>
+  <label style="color:grey">Bill Rate</label>
+    <input type="text" ng-model="billRate" id="br" placeholder="Bill Rate" style="width:250px;height:35px" class="form-control" disabled="true">
+  </div>
+  <div>
+  <label style="color:grey">OT Rate</label>
+      <input type="text" ng-model="otRate" id="or" placeholder="OT Rate" style="width:250px;height:35px" class="form-control" disabled="true">
+   </div>
+   <div>
+   <label style="color:grey">OT Bill Rate</label>
+    <input type="text" ng-model="otbillRate" id="obr" placeholder="OT Bill Rate" style="width:250px;height:35px" class="form-control" disabled="true">
+   </div>
+   <br>
+  
+  </div>
+
+  
+  
+  
+ <!--  
+ <h3 style="font-size:16px;font-family:tahoma;font-weight:bold;transform:translate(25px,5px)">Attachments</h3>
+ <p style="padding:10px"><input type="file" name="img"></p>
+ -->
+ 
+ 
+ 
+ 
+</div>
+</div>
+
+
+
+
+
+
+
+<!--  second part-->
+
+<div ng-show="two" class="col-sm-8"style="width:400px;height:1520px;transform:translate(-130px,5px)">
+
+<div style="width:1000px;height:40px;transform:translate(15px,2px);">
+<nav>
+<ul class="nav nav-justified">
+<li class="active" style="font-size:18px;font-family:arial"><a href="#">Initiate Onboarding</a></li>
+<li><a href="#" style="color:black;font-size:15px;font-family:arial">Emails</a></li>
+<li><a href="#" style="color:black;font-size:15px;font-family:arial">Review & Certify</a></li>
+<li><a href="#" style="color:black;font-size:15px;font-family:arial">Schedule</a></li>
+<li><a href="#" style="color:black;font-size:15px;font-family:arial">Activities</a></li>
+</ul>
+</nav>
+</div><hr style="width:950px;transform:translate(20px)">
+<div>
+<h3 style="font-size:16px;font-family:arial;font-weight:bold;transform:translate(20px)">Onboarding Notification</h3><br>
+<div class="col-sm-1" style="color:grey;transform:translate(5px,-10px)">Subject</div><div class="col-sm-11" align="left" style="transform:translate(40px,-10px)">Onboarding</div>
+</div>
+<div style="padding:30px;width:800px;height:170px; overflow: scroll;border:1px solid lightgrey;transform:translate(20px)">
+Hi Alexander,<br><br>
+
+
+Welcome to ACCUICK Onboarding.<br><br>
+
+
+You can sign in to your account using the following link: <a ng-href="https://app.accuick.com">https://app.accuick.com</a><br><br>
+
+
+We’re here to help you make the most of ACCUICK. Our team will be reaching out to you, but if you have any questions in the meantime, please email us at <p>team@accuick.com.</p><br><br>
+
+
+
+
+
+Regards,<br><br>
+
+The ACCUICK team
+
+
+
+</div>
+<div style="height:50px"><h3 style="font-size:16px;font-family:arial;font-weight:bold;transform:translate(30px,10px)">Offer Letter</h3>
+<button ng-click="previewOne()" class="btn btn-default btn-md" style="align:center;border:1px solid grey;border-radius:7px;transform:translate(900px,-18px)">PREVIEW</button>
+<a href="#offer" class="caret" data-toggle="collapse" style="transform:translate(900px,-20px)"></a>
+</div>
+<br>
+
+
+
+
+
+
+<div id="offer" class="collapse in" style="transform:translate(15px)">
+<div onload="initDoc();">
+<form name="compForm"> 
+ <input type="hidden" name="myDoc">
+
+<div>
+
+<div id="toolBar1" style="width:800px;transform:translate(10px)"></div>
+<div id="toolBar2" style="width:1000px;height:40px;background-color:lightyellow;transform:translate(10px)">
+
+
+
+<img class="intLink" title="Bold" onclick="formatDoc('bold');" src="data:image/gif;base64,R0lGODlhFgAWAID/AMDAwAAAACH5BAEAAAAALAAAAAAWABYAQAInhI+pa+H9mJy0LhdgtrxzDG5WGFVk6aXqyk6Y9kXvKKNuLbb6zgMFADs=" />&nbsp&nbsp&nbsp
+<img class="intLink" title="Italic" onclick="formatDoc('italic');" src="data:image/gif;base64,R0lGODlhFgAWAKEDAAAAAF9vj5WIbf///yH5BAEAAAMALAAAAAAWABYAAAIjnI+py+0Po5x0gXvruEKHrF2BB1YiCWgbMFIYpsbyTNd2UwAAOw==" />&nbsp&nbsp&nbsp
+<!--  <img class="intLink" title="Italic" onclick="formatDoc('italic');" src="data:image/gif;base64,R0lGODlhFgAWAKEDAAAAAF9vj5WIbf///yH5BAEAAAMALAAAAAAWABYAAAIjnI+py+0Po5x0gXvruEKHrF2BB1YiCWgbMFIYpsbyTNd2UwAAOw==" />&nbsp&nbsp&nbsp-->
+<img class="intLink" title="Underline" onclick="formatDoc('underline');" src="data:image/gif;base64,R0lGODlhFgAWAKECAAAAAF9vj////////yH5BAEAAAIALAAAAAAWABYAAAIrlI+py+0Po5zUgAsEzvEeL4Ea15EiJJ5PSqJmuwKBEKgxVuXWtun+DwxCCgA7" />&nbsp&nbsp&nbsp
+<img class="intLink" title="Left align" onclick="formatDoc('justifyleft');" src="data:image/gif;base64,R0lGODlhFgAWAID/AMDAwAAAACH5BAEAAAAALAAAAAAWABYAQAIghI+py+0Po5y02ouz3jL4D4JMGELkGYxo+qzl4nKyXAAAOw==" />&nbsp&nbsp&nbsp
+<img class="intLink" title="Center align" onclick="formatDoc('justifycenter');" src="data:image/gif;base64,R0lGODlhFgAWAID/AMDAwAAAACH5BAEAAAAALAAAAAAWABYAQAIfhI+py+0Po5y02ouz3jL4D4JOGI7kaZ5Bqn4sycVbAQA7" />&nbsp&nbsp&nbsp
+<img class="intLink" title="Right align" onclick="formatDoc('justifyright');" src="data:image/gif;base64,R0lGODlhFgAWAID/AMDAwAAAACH5BAEAAAAALAAAAAAWABYAQAIghI+py+0Po5y02ouz3jL4D4JQGDLkGYxouqzl43JyVgAAOw==" />&nbsp&nbsp&nbsp
+<img class="intLink" title="Dotted list" onclick="formatDoc('insertunorderedlist');" src="data:image/gif;base64,R0lGODlhFgAWAMIGAAAAAB1ChF9vj1iE33mOrqezxv///////yH5BAEAAAcALAAAAAAWABYAAAMyeLrc/jDKSesppNhGRlBAKIZRERBbqm6YtnbfMY7lud64UwiuKnigGQliQuWOyKQykgAAOw==" />&nbsp&nbsp&nbsp
+<img class="intLink" title="Numbered list" onclick="formatDoc('insertorderedlist');" src="data:image/gif;base64,R0lGODlhFgAWAMIGAAAAADljwliE35GjuaezxtHa7P///////yH5BAEAAAcALAAAAAAWABYAAAM2eLrc/jDKSespwjoRFvggCBUBoTFBeq6QIAysQnRHaEOzyaZ07Lu9lUBnC0UGQU1K52s6n5oEADs=" />&nbsp&nbsp&nbsp
+<img class="intLink" title="Cut" onclick="formatDoc('cut');" src="data:image/gif;base64,R0lGODlhFgAWAIQSAB1ChBFNsRJTySJYwjljwkxwl19vj1dusYODhl6MnHmOrpqbmpGjuaezxrCztcDCxL/I18rL1P///////////////////////////////////////////////////////yH5BAEAAB8ALAAAAAAWABYAAAVu4CeOZGmeaKqubDs6TNnEbGNApNG0kbGMi5trwcA9GArXh+FAfBAw5UexUDAQESkRsfhJPwaH4YsEGAAJGisRGAQY7UCC9ZAXBB+74LGCRxIEHwAHdWooDgGJcwpxDisQBQRjIgkDCVlfmZqbmiEAOw==" />&nbsp&nbsp&nbsp
+<img class="intLink" title="Undo" onclick="formatDoc('undo');" src="data:image/gif;base64,R0lGODlhFgAWAOMKADljwliE33mOrpGjuYKl8aezxqPD+7/I19DV3NHa7P///////////////////////yH5BAEKAA8ALAAAAAAWABYAAARR8MlJq7046807TkaYeJJBnES4EeUJvIGapWYAC0CsocQ7SDlWJkAkCA6ToMYWIARGQF3mRQVIEjkkSVLIbSfEwhdRIH4fh/DZMICe3/C4nBQBADs=" />&nbsp&nbsp&nbsp
+<img class="intLink" title="Copy" onclick="formatDoc('copy');" src="data:image/gif;base64,R0lGODlhFgAWAIQcAB1ChBFNsTRLYyJYwjljwl9vj1iE31iGzF6MnHWX9HOdz5GjuYCl2YKl8ZOt4qezxqK63aK/9KPD+7DI3b/I17LM/MrL1MLY9NHa7OPs++bx/Pv8/f///////////////yH5BAEAAB8ALAAAAAAWABYAAAWG4CeOZGmeaKqubOum1SQ/kPVOW749BeVSus2CgrCxHptLBbOQxCSNCCaF1GUqwQbBd0JGJAyGJJiobE+LnCaDcXAaEoxhQACgNw0FQx9kP+wmaRgYFBQNeAoGihCAJQsCkJAKOhgXEw8BLQYciooHf5o7EA+kC40qBKkAAAGrpy+wsbKzIiEAOw==" />&nbsp&nbsp&nbsp
+<img class="intLink" title="Paste" onclick="formatDoc('paste');" src="data:image/gif;base64,R0lGODlhFgAWAIQUAD04KTRLY2tXQF9vj414WZWIbXmOrpqbmpGjudClFaezxsa0cb/I1+3YitHa7PrkIPHvbuPs+/fvrvv8/f///////////////////////////////////////////////yH5BAEAAB8ALAAAAAAWABYAAAWN4CeOZGmeaKqubGsusPvBSyFJjVDs6nJLB0khR4AkBCmfsCGBQAoCwjF5gwquVykSFbwZE+AwIBV0GhFog2EwIDchjwRiQo9E2Fx4XD5R+B0DDAEnBXBhBhN2DgwDAQFjJYVhCQYRfgoIDGiQJAWTCQMRiwwMfgicnVcAAAMOaK+bLAOrtLUyt7i5uiUhADs=" />&nbsp&nbsp&nbsp
+ 
+ <span>
+ <select style="width:60px;height:15px;font-size:12px" onchange="formatDoc('forecolor',this[this.selectedIndex].value);this.selectedIndex=0;">
+<option class="heading" selected><b>Color</b></option>
+<option value="red">Red</option>
+<option value="blue">Blue</option>
+<option value="white">White</option>
+<option value="black">Black</option>
+</select>
+ </span>
+ <span>
+ <select style="width:60px;height:15px;font-size:12px" onchange="formatDoc('fontname',this[this.selectedIndex].value);this.selectedIndex=0;">
+<option class="heading" selected><b>FONT</b></option>
+<option>Arial</option>
+<option>Arial Black</option>
+<option>Courier New</option>
+<option>Times New Roman</option>
+</select>
+ </span>
+ <span>
+ <select style="width:60px;height:15px;font-size:12px" onchange="formatDoc('backcolor',this[this.selectedIndex].value);this.selectedIndex=0;">
+<option class="heading" selected><b>BACKGROUND</b></option>
+<option value="red">Red</option>
+<option value="yellow">Yellow</option>
+<option value="lime">Lime</option>
+</select>
+ </span>
+
+</div>
+
+
+
+
+<div id="textBox" contenteditable="true" style="width:1000px;height:400px;padding:20px;border:1px solid lightgrey;transform:translate(10px)">
+
+ 
+<div style="height:50px;width:300px;transform:translate(600px,20px)"><img ng-src="image/Capture.PNG" width="300px" height="50px"></div>
+<b>Today’s Date (MM/DD/YYYY)</b><br><br>
+
+
+<p style="font-size:18px;font-family:tahoma">Candidate First & Last Name</p><br>
+
+
+Re: Offer of Employment<br>
+
+
+<h2 style="font-size:14px;font-family:tahoma">Dear <b>Candidate First Name:</b></h2><br><br>
+
+
+ASK STAFFING, INC. is pleased to offer you the position of <b>Job Title</b> with our client <b>Client’s</b> Name in City, State.<br>
+
+This offer is made subject to the general terms outlined below, as well as the normal terms and conditions of employment which apply to our other employees. This offer is contingent upon the successful completion of any drug and background screening required BY ASK and its client. Following the completion of all required pre-employment screenings, information regarding your start date will be communicated to you by your recruiter.<br><br>
+
+
+The wage rate for your position will be<b> $XX.XX/hr</b>. You will be paid biweekly on alternate Fridays and a pay schedule will be available with payroll reporting instructions for you to review.<br><br>
+
+
+We require that you familiarize yourself with our policies or procedures as well as those issued by our client who you will be subject to the same standards of professionalism, conduct, and performance as all ASK staffing employees. A copy of the ASK Staffing Handbook will be sent to you for your review.<br><br>
+
+
+We request that you give us at least two weeks written notice if you plan to terminate your employment. Such notice is necessary to allow for an orderly transition of your duties and to avoid any adverse impact upon our customer relationships.<br><br>
+
+
+This offer of employment is not a contract of employment for a definite period and, like all other employees, your employment with ASK is subject to immediate termination at any time, with or without cause and with or without advance notice.<br><br>
+
+
+If you have any questions, concerns, or grievances during your employment, please see me in a timely manner.<br><br>
+
+
+Please let us know if there are any other terms and conditions of employment which we discussed that you believe should be addressed in this letter. If you intend to accept this offer subject to the terms and conditions outlined in this letter, please indicate so by signing and returning a copy of this letter to HR by end of day on <b>MM/DD/YYYY</b>.<br><br>
+
+
+6495 Shiloh Road Suite # 300, Alpharetta, GA – 30005<br>
+
+770-813-8947 • (678) 990-0403 FAX<br>
+
+We will keep the terms of this offer confidential and expect that you will do the same.<br><br>
+
+
+<b>Candidate First Name</b>, we are excited that you are joining us and believe you will make a positive contribution to ASK.<br><br>
+
+
+Sincerely,<br><br><br>
+
+
+
+HR First & Last Name<br>
+
+HR Coordinator<br><br>
+
+
+ASK Staffing, Inc<br><br>
+
+
+<b>Acceptance of Job Offer</b><br><br>
+
+
+By signing and dating this letter below, I,<b> Candidate First & Last Name</b>, accept the job offer of Job Title, by ASK Staffing, Inc.<br><br><br><br><br>
+
+ <div class="col-sm-6">
+<p style="border:1px solid grey;width:200px"></p>
+<b>Signature</b>
+</div>
+<div class="col-sm-6" align="left" style="transform:translate(270px,4px)">
+<p style="border:1px solid grey;width:200px"></p>
+<b>Date</b>
+</div>
+</div>
+</div>
+
+<div ng-hide="true">
+ <!-- <p id="editMode">--><input type="checkbox" name="switchMode" id="switchBox"><!--  onchange="setDocMode(this.checked);" /> <label for="switchBox">Show HTML</label> </p>-->
+<!--  <p><input type="submit" value="Send" /></p>--></div>
+</form>
+</div>
+</div>
+<!--  <form>-->
+<h3 style="font-size:16px;font-family:arial;font-weight:bold;transform:translate(30px,30px)">Onboarding Workflow</h3>
+<a href="#select" class="caret" data-toggle="collapse" style="transform:translate(990px,-7px)"></a>
+<br>
+<div id="select" class="collapse in" style="transform:translate(20px)">
+<div>
+<select style="width:300px;height:30px;transform:translate(10px,10px)" required>
+<option value="Onboarding Verizon">Onboarding Verizon</option>
+<option value="ADP onboarding">ADP Onboarding</option>
+<option value="Amazon Onboarding">Amazon Onboarding</option>
+</select>
+</div>
+<br>
+
+<h3 style="font-size:16px;font-weight:bold;font-family:arial;transform:translate(15px,30px)">Steps</h3><br><br>
+   <div>
+   <div class="row">
+  <div><div class="alert  alert-dismissable" style="width:1000px;height:50px;">
+  <button class="btn btn-default" style="width:35px;height:35px;border:1px solid #00BFFF;background-color:white;color:#00BFFF;border-radius:60%;transform:translate(5px);font-weight:bold">1</button>
+    <div style="border:1px solid grey;border-radius:10px;font-size:16px;font-family:tahoma;padding:10px;float:right;width:900px;height:50px;transform:translate(20px,-4px)">Background Verification</div>
+   
+    <a href="#" class="close" data-dismiss="alert" aria-label="close" style="transform:translate(890px,15px)">×</a>
+    </div>
+  </div>
+  </div>
+  
+  <div class="row">
+  <div><div class="alert  alert-dismissable" style="width:1000px;height:50px;">
+  <button  class="btn btn-default" style="width:35px;height:35px;border:1px solid #00BFFF;background-color:white;color:#00BFFF;border-radius:60%;transform:translate(5px,-5px);font-weight:bold">2</button>
+    <div style="border:1px solid grey;border-radius:10px;font-size:16px;font-family:tahoma;padding:10px;float:right;width:900px;height:50px;transform:translate(20px,-8px)">Personal Details</div>
+    <a href="#" class="close" data-dismiss="alert" aria-label="close" style="transform:translate(890px,10px)">×</a>
+    </div>
+  </div>
+  </div>
+   <div class="row">
+  <div><div class="alert  alert-dismissable" style="width:1000px;height:50px;">
+  <button  class="btn btn-default" style="width:35px;height:35px;border:1px solid #00BFFF;background-color:white;color:#00BFFF;border-radius:60%;transform:translate(5px,-10px);font-weight:bold">3</button>
+    <div style="border:1px solid grey;border-radius:10px;font-size:16px;font-family:tahoma;padding:10px;float:right;width:900px;height:50px;transform:translate(20px,-12px)">Drug Test</div>
+    <a href="#" class="close" data-dismiss="alert" aria-label="close" style="transform:translate(890px,5px)">×</a>
+    </div>
+  </div>
+  </div>
+  <div class="row">
+  <div><div class="alert  alert-dismissable" style="width:1000px;height:50px;">
+  <button  class="btn btn-default" style="width:35px;height:35px;border:1px solid #00BFFF;background-color:white;color:#00BFFF;border-radius:60%;transform:translate(5px,-12px);font-weight:bold">4</button>
+    <div style="border:1px solid grey;border-radius:10px;font-size:16px;font-family:tahoma;padding:10px;float:right;width:900px;height:50px;transform:translate(20px,-15px)">I9 Verification</div>
+    <a href="#" class="close" data-dismiss="alert" aria-label="close" style="transform:translate(890px,2px)">×</a>
+    </div>
+  </div>
+  </div>
+  <div class="row">
+  <div><div class="alert  alert-dismissable" style="width:1000px;height:120px;">
+  
+  <button  class="btn btn-default" style="width:35px;height:35px;border:1px solid #00BFFF;background-color:white;color:#00BFFF;border-radius:60%;transform:translate(5px,-10px);font-weight:bold">5</button>
+    <div style="border:1px solid grey;border-radius:10px;font-size:16px;font-family:tahoma;padding:10px;float:right;width:900px;height:120px;transform:translate(20px,-16px)"><p>Contract Documents</p>
+   
+  <a href="#" class="close" data-dismiss="alert" aria-label="close" style="transform:translate(-16px,-30px)">×</a>
+   
+    <div class="col-sm-4 alert  alert-dismissable alert-warning" style="width:270px;height:60px;border:1px solid grey;border-radius:10px;">
+    <a href="#" class="close" data-dismiss="alert" aria-label="close">×</a>
+    <strong>ASK Background Authorization Form</strong> 
+  </div>
+  <div class="col-sm-4 alert  alert-dismissable alert-warning" style="width:270px;height:60px;border:1px solid grey;border-radius:10px;">
+    <a href="#" class="close" data-dismiss="alert" aria-label="close">×</a>
+    <strong>ASK Staffing Contrator Handbook</strong> 
+  </div>
+  <div class="col-sm-4 alert  alert-dismissable alert-warning" style="width:270px;height:60px;border:1px solid grey;border-radius:10px;">
+    <a href="#" class="close" data-dismiss="alert" aria-label="close">×</a>
+    <strong>Direct Deposit Authorization Form</strong> 
+  </div>
+  
+    </div>
+  </div>
+  </div></div>
+  </div></div>
+<br>
+</div>
+
+ <!--  </form>-->
+
+
+ 
+
+  <!--  second view-->
+  <div style="padding:20px;width:1350px" ng-show="isVisible" ><!-- <a href="#" type="button" ng-click="showMe()"><span class="caret"></span></a>-->
+  <!--  <button style="width:30px;height:30px;transform:translate(20px,-10px);background-color:#ffffe6" class="btn btn-sm" ng-click="showMe()"><span style="transform: rotate(270deg);" class="caret"></span></button>-->
+  
+
+<div style="width:1100px;height:20px;transform:translate(60px)">
+
+<nav>
+
+<ul class="nav nav-justified">
+<li><button style="width:30px;height:30px;transform:translate(-30px,-10px);background-color:#ffffe6" class="btn btn-sm" ng-click="showMe()"><span style="transform: rotate(270deg);" class="caret"></span></button></li>
+<li class="active" style="font-size:18px;font-family:arial;transform:translate(-130px,-10px)"><a href="#">Initiate Onboarding</a></li>
+<li><a href="#" style="color:black;font-size:15px;font-family:arial;transform:translate(-130px,-10px)">Emails</a></li>
+<li><a href="#" style="color:black;font-size:15px;font-family:arial;transform:translate(-130px,-10px)">Review & Certify</a></li>
+<li><a href="#" style="color:black;font-size:15px;font-family:arial;transform:translate(-130px,-10px)">Schedule</a></li>
+<li><a href="#" style="color:black;font-size:15px;font-family:arial;transform:translate(-130px,-10px)">Activities</a></li>
+</ul>
+</nav>
+</div><hr style="width:1000px;transform:translate(-80px)">
+  
+  <h3 style="transform:translate(50px,10px);font-size:16px;font-weight:bold;font-family:arial">Onboarding Notification</h3><br>
+<div class="col-sm-1" style="color:grey;transform:translate(50px,-10px)">Subject</div><div class="col-sm-11" align="left" style="transform:translate(40px,-10px)">Onboarding</div>
+
+
+<div style="padding:30px;margin:30px;width:1000px;height:170px; overflow: scroll;border:1px solid lightgrey;transform:translate(30px)">
+Hi Alexander,<br><br>
+
+
+Welcome to ACCUICK Onboarding.<br><br>
+
+
+You can sign in to your account using the following link: <a ng-href="https://app.accuick.com">https://app.accuick.com</a><br><br>
+
+
+We’re here to help you make the most of ACCUICK. Our team will be reaching out to you, but if you have any questions in the meantime, please email us at <p>team@accuick.com.</p><br><br>
+
+
+
+
+
+Regards,<br><br>
+
+The ACCUICK team
+
+
+
+</div>
+<br>
+
+<!--  dddd-->
+<div style="height:50px"><p style="font-size:16px;font-family:arial;font-weight:bold;transform:translate(50px,10px)">Offer Letter</p>
+<button ng-click="previewTwo()" class="btn btn-default btn-md" style="align:center;border:1px solid grey;border-radius:7px;transform:translate(1100px,-25px)">PREVIEW</button>
+<a href="#letter" class="caret" data-toggle="collapse" style="transform:translate(1100px,-25px)"></a>
+</div>
+<div id="letter" class="collapse in">
+<div onload="initDocnew();" style="transform:translate(45px,15px)">
+<form name="compFormnew"> 
+ <input type="hidden" name="myDocnew">
+
+<div>
+
+<div id="toolBar1new" style="width:800px;transform:translate(10px)"></div>
+<div id="toolBar2new" style="width:1100px;height:40px;background-color:lightyellow;transform:translate(10px)">
+
+
+
+<img class="intLink" title="Bold" onclick="formatDocnew('bold');" src="data:image/gif;base64,R0lGODlhFgAWAID/AMDAwAAAACH5BAEAAAAALAAAAAAWABYAQAInhI+pa+H9mJy0LhdgtrxzDG5WGFVk6aXqyk6Y9kXvKKNuLbb6zgMFADs=" />&nbsp&nbsp&nbsp
+<img class="intLink" title="Italic" onclick="formatDocnew('italic');" src="data:image/gif;base64,R0lGODlhFgAWAKEDAAAAAF9vj5WIbf///yH5BAEAAAMALAAAAAAWABYAAAIjnI+py+0Po5x0gXvruEKHrF2BB1YiCWgbMFIYpsbyTNd2UwAAOw==" />&nbsp&nbsp&nbsp
+<!--  <img class="intLink" title="Italic" onclick="formatDocnew('italic');" src="data:image/gif;base64,R0lGODlhFgAWAKEDAAAAAF9vj5WIbf///yH5BAEAAAMALAAAAAAWABYAAAIjnI+py+0Po5x0gXvruEKHrF2BB1YiCWgbMFIYpsbyTNd2UwAAOw==" />&nbsp&nbsp&nbsp-->
+<img class="intLink" title="Underline" onclick="formatDocnew('underline');" src="data:image/gif;base64,R0lGODlhFgAWAKECAAAAAF9vj////////yH5BAEAAAIALAAAAAAWABYAAAIrlI+py+0Po5zUgAsEzvEeL4Ea15EiJJ5PSqJmuwKBEKgxVuXWtun+DwxCCgA7" />&nbsp&nbsp&nbsp
+<img class="intLink" title="Left align" onclick="formatDocnew('justifyleft');" src="data:image/gif;base64,R0lGODlhFgAWAID/AMDAwAAAACH5BAEAAAAALAAAAAAWABYAQAIghI+py+0Po5y02ouz3jL4D4JMGELkGYxo+qzl4nKyXAAAOw==" />&nbsp&nbsp&nbsp
+<img class="intLink" title="Center align" onclick="formatDocnew('justifycenter');" src="data:image/gif;base64,R0lGODlhFgAWAID/AMDAwAAAACH5BAEAAAAALAAAAAAWABYAQAIfhI+py+0Po5y02ouz3jL4D4JOGI7kaZ5Bqn4sycVbAQA7" />&nbsp&nbsp&nbsp
+<img class="intLink" title="Right align" onclick="formatDocnew('justifyright');" src="data:image/gif;base64,R0lGODlhFgAWAID/AMDAwAAAACH5BAEAAAAALAAAAAAWABYAQAIghI+py+0Po5y02ouz3jL4D4JQGDLkGYxouqzl43JyVgAAOw==" />&nbsp&nbsp&nbsp
+<img class="intLink" title="Dotted list" onclick="formatDocnew('insertunorderedlist');" src="data:image/gif;base64,R0lGODlhFgAWAMIGAAAAAB1ChF9vj1iE33mOrqezxv///////yH5BAEAAAcALAAAAAAWABYAAAMyeLrc/jDKSesppNhGRlBAKIZRERBbqm6YtnbfMY7lud64UwiuKnigGQliQuWOyKQykgAAOw==" />&nbsp&nbsp&nbsp
+<img class="intLink" title="Numbered list" onclick="formatDocnew('insertorderedlist');" src="data:image/gif;base64,R0lGODlhFgAWAMIGAAAAADljwliE35GjuaezxtHa7P///////yH5BAEAAAcALAAAAAAWABYAAAM2eLrc/jDKSespwjoRFvggCBUBoTFBeq6QIAysQnRHaEOzyaZ07Lu9lUBnC0UGQU1K52s6n5oEADs=" />&nbsp&nbsp&nbsp
+<img class="intLink" title="Cut" onclick="formatDocnew('cut');" src="data:image/gif;base64,R0lGODlhFgAWAIQSAB1ChBFNsRJTySJYwjljwkxwl19vj1dusYODhl6MnHmOrpqbmpGjuaezxrCztcDCxL/I18rL1P///////////////////////////////////////////////////////yH5BAEAAB8ALAAAAAAWABYAAAVu4CeOZGmeaKqubDs6TNnEbGNApNG0kbGMi5trwcA9GArXh+FAfBAw5UexUDAQESkRsfhJPwaH4YsEGAAJGisRGAQY7UCC9ZAXBB+74LGCRxIEHwAHdWooDgGJcwpxDisQBQRjIgkDCVlfmZqbmiEAOw==" />&nbsp&nbsp&nbsp
+<img class="intLink" title="Undo" onclick="formatDocnew('undo');" src="data:image/gif;base64,R0lGODlhFgAWAOMKADljwliE33mOrpGjuYKl8aezxqPD+7/I19DV3NHa7P///////////////////////yH5BAEKAA8ALAAAAAAWABYAAARR8MlJq7046807TkaYeJJBnES4EeUJvIGapWYAC0CsocQ7SDlWJkAkCA6ToMYWIARGQF3mRQVIEjkkSVLIbSfEwhdRIH4fh/DZMICe3/C4nBQBADs=" />&nbsp&nbsp&nbsp
+<img class="intLink" title="Copy" onclick="formatDocnew('copy');" src="data:image/gif;base64,R0lGODlhFgAWAIQcAB1ChBFNsTRLYyJYwjljwl9vj1iE31iGzF6MnHWX9HOdz5GjuYCl2YKl8ZOt4qezxqK63aK/9KPD+7DI3b/I17LM/MrL1MLY9NHa7OPs++bx/Pv8/f///////////////yH5BAEAAB8ALAAAAAAWABYAAAWG4CeOZGmeaKqubOum1SQ/kPVOW749BeVSus2CgrCxHptLBbOQxCSNCCaF1GUqwQbBd0JGJAyGJJiobE+LnCaDcXAaEoxhQACgNw0FQx9kP+wmaRgYFBQNeAoGihCAJQsCkJAKOhgXEw8BLQYciooHf5o7EA+kC40qBKkAAAGrpy+wsbKzIiEAOw==" />&nbsp&nbsp&nbsp
+<img class="intLink" title="Paste" onclick="formatDocnew('paste');" src="data:image/gif;base64,R0lGODlhFgAWAIQUAD04KTRLY2tXQF9vj414WZWIbXmOrpqbmpGjudClFaezxsa0cb/I1+3YitHa7PrkIPHvbuPs+/fvrvv8/f///////////////////////////////////////////////yH5BAEAAB8ALAAAAAAWABYAAAWN4CeOZGmeaKqubGsusPvBSyFJjVDs6nJLB0khR4AkBCmfsCGBQAoCwjF5gwquVykSFbwZE+AwIBV0GhFog2EwIDchjwRiQo9E2Fx4XD5R+B0DDAEnBXBhBhN2DgwDAQFjJYVhCQYRfgoIDGiQJAWTCQMRiwwMfgicnVcAAAMOaK+bLAOrtLUyt7i5uiUhADs=" />&nbsp&nbsp&nbsp
+ 
+ <span>
+ <select style="width:60px;height:15px;font-size:12px" onchange="formatDocnew('forecolor',this[this.selectedIndex].value);this.selectedIndex=0;">
+<option class="heading" selected><b>Color</b></option>
+<option value="red">Red</option>
+<option value="blue">Blue</option>
+<option value="white">White</option>
+<option value="black">Black</option>
+</select>
+ </span>
+ <span>
+ <select style="width:60px;height:15px;font-size:12px" onchange="formatDocnew('fontname',this[this.selectedIndex].value);this.selectedIndex=0;">
+<option class="heading" selected><b>FONT</b></option>
+<option>Arial</option>
+<option>Arial Black</option>
+<option>Courier New</option>
+<option>Times New Roman</option>
+</select>
+ </span>
+ <span>
+ <select style="width:60px;height:15px;font-size:12px" onchange="formatDocnew('backcolor',this[this.selectedIndex].value);this.selectedIndex=0;">
+<option class="heading" selected><b>BACKGROUND</b></option>
+<option value="red">Red</option>
+<option value="yellow">Yellow</option>
+<option value="lime">Lime</option>
+</select>
+ </span>
+
+</div>
+
+
+
+
+<div id="textBoxnew" contenteditable="true" style="width:1100px;height:400px;padding:20px;border:1px solid lightgrey;transform:translate(10px)">
+
+ 
+<div style="height:50px;width:300px;transform:translate(600px,20px)"><img ng-src="image/Capture.PNG" width="300px" height="50px"></div>
+<b>Today’s Date (MM/DD/YYYY)</b><br><br>
+
+
+<p style="font-size:18px;font-family:tahoma">Candidate First & Last Name</p><br>
+
+
+Re: Offer of Employment<br>
+
+
+<h2 style="font-size:14px;font-family:tahoma">Dear <b>Candidate First Name:</b></h2><br><br>
+
+
+ASK STAFFING, INC. is pleased to offer you the position of <b>Job Title</b> with our client <b>Client’s</b> Name in City, State.<br>
+
+This offer is made subject to the general terms outlined below, as well as the normal terms and conditions of employment which apply to our other employees. This offer is contingent upon the successful completion of any drug and background screening required BY ASK and its client. Following the completion of all required pre-employment screenings, information regarding your start date will be communicated to you by your recruiter.<br><br>
+
+
+The wage rate for your position will be<b> $XX.XX/hr</b>. You will be paid biweekly on alternate Fridays and a pay schedule will be available with payroll reporting instructions for you to review.<br><br>
+
+
+We require that you familiarize yourself with our policies or procedures as well as those issued by our client who you will be subject to the same standards of professionalism, conduct, and performance as all ASK staffing employees. A copy of the ASK Staffing Handbook will be sent to you for your review.<br><br>
+
+
+We request that you give us at least two weeks written notice if you plan to terminate your employment. Such notice is necessary to allow for an orderly transition of your duties and to avoid any adverse impact upon our customer relationships.<br><br>
+
+
+This offer of employment is not a contract of employment for a definite period and, like all other employees, your employment with ASK is subject to immediate termination at any time, with or without cause and with or without advance notice.<br><br>
+
+
+If you have any questions, concerns, or grievances during your employment, please see me in a timely manner.<br><br>
+
+
+Please let us know if there are any other terms and conditions of employment which we discussed that you believe should be addressed in this letter. If you intend to accept this offer subject to the terms and conditions outlined in this letter, please indicate so by signing and returning a copy of this letter to HR by end of day on <b>MM/DD/YYYY</b>.<br><br>
+
+
+6495 Shiloh Road Suite # 300, Alpharetta, GA – 30005<br>
+
+770-813-8947 • (678) 990-0403 FAX<br>
+
+We will keep the terms of this offer confidential and expect that you will do the same.<br><br>
+
+
+<b>Candidate First Name</b>, we are excited that you are joining us and believe you will make a positive contribution to ASK.<br><br>
+
+
+Sincerely,<br><br><br>
+
+
+
+HR First & Last Name<br>
+
+HR Coordinator<br><br>
+
+
+ASK Staffing, Inc<br><br>
+
+
+<b>Acceptance of Job Offer</b><br><br>
+
+
+By signing and dating this letter below, I,<b> Candidate First & Last Name</b>, accept the job offer of Job Title, by ASK Staffing, Inc.<br><br><br><br><br>
+
+ <div class="col-sm-6">
+<p style="border:1px solid grey;width:200px"></p>
+<b>Signature</b>
+</div>
+<div class="col-sm-6" align="left" style="transform:translate(270px,4px)">
+<p style="border:1px solid grey;width:200px"></p>
+<b>Date</b>
+</div>
+</div>
+</div>
+
+<div ng-hide="true">
+ <!-- <p id="editModenew">--><input type="checkbox" name="switchModenew" id="switchBoxnew"><!--  onchange="setDocModenew(this.checked);" /> <label for="switchBoxnew">Show HTML</label> </p>-->
+<!--  <p><input type="submit" value="Send" /></p>--></div>
+</form>
+</div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+<br>
+<h3 style="font-size:16px;font-family:arial;font-weight:bold;transform:translate(50px,30px)">Onboarding Workflow</h3>
+<a href="#selectnew" class="caret" data-toggle="collapse" style="transform:translate(1200px,-5px)"></a>
+<br><br>
+<div id="selectnew" class="collapse in">
+<div>
+<select style="width:300px;height:30px;transform:translate(50px,-5px)">
+<option value="Onboarding Verizon">Onboarding Verizon</option>
+<option value="ADP onboarding">ADP Onboarding</option>
+<option value="Amazon Onboarding">Amazon Onboarding</option>
+</select>
+</div>
+  
+<h3 style="font-size:16px;font-weight:bold;font-family:arial;transform:translate(50px,40px)">Steps</h3>
+   <div style="padding:50px">
+   <div class="row">
+  <div><div class="alert  alert-dismissable" style="width:1100px;height:50px;">
+  <button  class="btn btn-default" style="width:35px;height:35px;border:1px solid #00BFFF;background-color:white;color:#00BFFF;border-radius:60%;transform:translate(5px,6px);font-weight:bold">1</button>
+    <div style="border:1px solid grey;border-radius:10px;font-size:16px;font-family:tahoma;padding:10px;float:right;width:1000px;height:50px;transform:translate(30px)">Background Verification</div>
+    <a href="#" class="close" data-dismiss="alert" aria-label="close" style="transform:translate(1000px,20px)">×</a>
+    </div>
+  </div>
+  </div>
+  
+  <div class="row">
+  <div><div class="alert  alert-dismissable" style="width:1100px;height:50px;">
+  <button  class="btn btn-default" style="width:35px;height:35px;border:1px solid #00BFFF;background-color:white;color:#00BFFF;border-radius:60%;transform:translate(5px,8px);font-weight:bold">2</button>
+    <div style="border:1px solid grey;border-radius:10px;font-size:16px;font-family:tahoma;padding:10px;float:right;width:1000px;height:50px;transform:translate(30px)">Personal Details</div>
+    <a href="#" class="close" data-dismiss="alert" aria-label="close" style="transform:translate(1000px,20px)">×</a>
+    </div>
+  </div>
+  </div>
+   <div class="row">
+  <div><div class="alert  alert-dismissable" style="width:1100px;height:50px;">
+  <button  class="btn btn-default" style="width:35px;height:35px;border:1px solid #00BFFF;background-color:white;color:#00BFFF;border-radius:60%;transform:translate(5px,8px);font-weight:bold">3</button>
+    <div style="border:1px solid grey;border-radius:10px;font-size:16px;font-family:tahoma;padding:10px;float:right;width:1000px;height:50px;transform:translate(30px)">Drug Test</div>
+    <a href="#" class="close" data-dismiss="alert" aria-label="close" style="transform:translate(1000px,20px)">×</a>
+    </div>
+  </div>
+  </div>
+  <div class="row">
+  <div><div class="alert  alert-dismissable" style="width:1100px;height:50px;">
+  <button  class="btn btn-default" style="width:35px;height:35px;border:1px solid #00BFFF;background-color:white;color:#00BFFF;border-radius:60%;transform:translate(5px,10px);font-weight:bold">4</button>
+    <div style="border:1px solid grey;border-radius:10px;font-size:16px;font-family:tahoma;padding:10px;float:right;width:1000px;height:50px;transform:translate(30px)">I9 Verification</div>
+    <a href="#" class="close" data-dismiss="alert" aria-label="close" style="transform:translate(1000px,20px)">×</a>
+    </div>
+  </div>
+  </div>
+  <div class="row">
+  <div><div class="alert  alert-dismissable" style="width:1100px;height:120px;">
+  
+  <button  class="btn btn-default" style="width:35px;height:35px;border:1px solid #00BFFF;background-color:white;color:#00BFFF;border-radius:60%;transform:translate(5px,10px);font-weight:bold">5</button>
+    <div style="border:1px solid grey;border-radius:10px;font-size:16px;font-family:tahoma;padding:10px;float:right;width:1000px;height:120px;transform:translate(30px,2px)"><p>Contract Documents</p>
+   
+  <a href="#" class="close" data-dismiss="alert" aria-label="close" style="transform:translate(-16px,-30px)">×</a>
+     
+    <div class="col-sm-4 alert  alert-dismissable alert-warning" style="width:300px;height:60px;border:1px solid grey;border-radius:10px;">
+    <a href="#" class="close" data-dismiss="alert" aria-label="close">×</a>
+    <strong>ASK Background Authorization Form</strong> 
+  </div>
+  <div class="col-sm-4 alert  alert-dismissable alert-warning" style="width:300px;height:60px;border:1px solid grey;border-radius:10px;">
+    <a href="#" class="close" data-dismiss="alert" aria-label="close">×</a>
+    <strong>ASK Staffing Contrator Handbook</strong> 
+  </div>
+  <div class="col-sm-4 alert  alert-dismissable alert-warning" style="width:300px;height:60px;border:1px solid grey;border-radius:10px;">
+    <a href="#" class="close" data-dismiss="alert" aria-label="close">×</a>
+    <strong>Direct Deposit Authorization Form</strong> 
+  </div>
+  
+    </div>
+  </div>
+  </div></div>
+  </div>
+  </div>
+  
+  
+  
+  
+  
+  </div>
+  
+  
+  
+  
+  
+  <br><br><br>
+  
+   <div class="col-sm-12 jumbotron" style="height:100px;width:1349px;border:1px solid lightgrey;attachmen:fixed;" ><br>
+<div><button  class="btn btn-default btn-md" style="width:140px;align:center;border:1px solid grey;border-radius:7px;transform:translate(1000px,-30px)">CANCEL</button>&nbsp&nbsp
+<button ng-click="send()" class="btn btn-info btn-md active" style="width:140px;align:center;border-radius:7px;transform:translate(1000px,-30px)">SEND</button>
+</div>
+
+ </div>
+
+</body>
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 
+
+</html>
